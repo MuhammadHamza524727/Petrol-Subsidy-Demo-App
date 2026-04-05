@@ -56,6 +56,12 @@ export const transactions = pgTable('transactions', {
   createdAt: timestamp('created_at').notNull().defaultNow(),
 })
 
+export const visitors = pgTable('visitors', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  ip: varchar('ip', { length: 45 }).unique().notNull(), // unique per IP
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+})
+
 export type User = typeof users.$inferSelect
 export type NewUser = typeof users.$inferInsert
 export type Quota = typeof quota.$inferSelect

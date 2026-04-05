@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { CheckCircle, Fuel, QrCode, Sparkles } from 'lucide-react'
 import { useLang } from '@/lib/language'
+import { VisitorCounter } from '@/components/visitor-counter'
 
 export default function LandingPage() {
   const { t } = useLang()
@@ -75,6 +76,10 @@ export default function LandingPage() {
           <p className="text-xs text-teal-300 pt-2 anim-fade-in delay-400">
             {t('Free • No registration • Instant result', 'مفت • بغیر رجسٹریشن • فوری نتیجہ')}
           </p>
+
+          <div className="anim-fade-in delay-500">
+            <VisitorCounter />
+          </div>
         </div>
       </section>
 
