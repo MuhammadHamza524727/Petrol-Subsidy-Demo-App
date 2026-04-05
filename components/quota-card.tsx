@@ -36,14 +36,14 @@ export function QuotaCard({ cnic, totalQuota, remainingQuota, resetDate, onReset
     pct > 50 ? 'bg-green-500' : pct > 20 ? 'bg-yellow-500' : 'bg-red-500'
 
   return (
-    <Card className="border-0 shadow-md bg-gradient-to-br from-blue-700 to-blue-900 text-white">
+    <Card className="border-0 shadow-md bg-gradient-to-br from-teal-700 to-teal-950 text-white card-lift">
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Fuel className="h-5 w-5 text-blue-200" />
+            <Fuel className="h-5 w-5 text-teal-200" />
             <CardTitle className="text-white text-base">Monthly Quota</CardTitle>
           </div>
-          <Badge className="bg-blue-500/40 text-white border-blue-400 text-xs">
+          <Badge className="bg-teal-500/40 text-white border-teal-400 text-xs">
             Reset: {resetDate}
           </Badge>
         </div>
@@ -53,23 +53,23 @@ export function QuotaCard({ cnic, totalQuota, remainingQuota, resetDate, onReset
         <div className="flex items-end justify-between">
           <div>
             <p className="text-4xl font-bold text-white">{remainingQuota}L</p>
-            <p className="text-blue-200 text-sm mt-0.5">remaining of {totalQuota}L</p>
+            <p className="text-teal-200 text-sm mt-0.5">remaining of {totalQuota}L</p>
           </div>
           <div className="text-right">
-            <p className="text-2xl font-semibold text-blue-100">{pct}%</p>
-            <p className="text-blue-300 text-xs">bachi hui</p>
+            <p className="text-2xl font-semibold text-teal-100">{pct}%</p>
+            <p className="text-teal-300 text-xs">bachi hui</p>
           </div>
         </div>
 
         {/* Progress bar */}
         <div className="space-y-1">
-          <div className="w-full bg-blue-900/50 rounded-full h-3 overflow-hidden">
+          <div className="w-full bg-teal-900/50 rounded-full h-3 overflow-hidden">
             <div
               className={`h-full rounded-full transition-all duration-500 ${barColor}`}
               style={{ width: `${pct}%` }}
             />
           </div>
-          <div className="flex justify-between text-xs text-blue-300">
+          <div className="flex justify-between text-xs text-teal-300">
             <span>0L</span>
             <span>{totalQuota}L</span>
           </div>

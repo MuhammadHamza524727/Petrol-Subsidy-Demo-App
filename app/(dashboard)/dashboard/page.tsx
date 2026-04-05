@@ -88,9 +88,9 @@ export default function DashboardPage() {
   return (
     <div className="space-y-5">
       {/* User greeting */}
-      <div className="flex items-center gap-3 bg-white rounded-xl border border-slate-200 shadow-sm px-4 py-3">
-        <div className="p-2 bg-blue-100 rounded-full">
-          <User className="h-5 w-5 text-blue-700" />
+      <div className="flex items-center gap-3 bg-white rounded-xl border border-slate-200 shadow-sm px-4 py-3 anim-slide-right delay-0">
+        <div className="p-2 bg-teal-100 rounded-full">
+          <User className="h-5 w-5 text-teal-700" />
         </div>
         <div className="flex-1 min-w-0">
           <p className="font-semibold text-slate-800 truncate">
@@ -104,19 +104,25 @@ export default function DashboardPage() {
       </div>
 
       {/* Quota card */}
-      <QuotaCard
-        cnic={cnic}
-        totalQuota={data.quota.totalQuota}
-        remainingQuota={data.quota.remainingQuota}
-        resetDate={data.quota.resetDate}
-        onReset={handleQuotaReset}
-      />
+      <div className="anim-fade-up delay-100">
+        <QuotaCard
+          cnic={cnic}
+          totalQuota={data.quota.totalQuota}
+          remainingQuota={data.quota.remainingQuota}
+          resetDate={data.quota.resetDate}
+          onReset={handleQuotaReset}
+        />
+      </div>
 
       {/* Chart */}
-      <UsageChartWrapper data={chartData} />
+      <div className="anim-fade-up delay-200">
+        <UsageChartWrapper data={chartData} />
+      </div>
 
       {/* Transactions */}
-      <TransactionList transactions={data.transactions} />
+      <div className="anim-fade-up delay-300">
+        <TransactionList transactions={data.transactions} />
+      </div>
     </div>
   )
 }

@@ -26,7 +26,7 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
     return (
       <div className="bg-white border border-slate-200 rounded-lg shadow-sm px-3 py-2 text-sm">
         <p className="font-medium text-slate-700">{label}</p>
-        <p className="text-blue-600">{payload[0].value}L used</p>
+        <p className="text-teal-600">{payload[0].value}L used</p>
       </div>
     )
   }
@@ -57,8 +57,8 @@ export function UsageChart({ data }: UsageChartProps) {
           <AreaChart data={data} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
             <defs>
               <linearGradient id="usageGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                <stop offset="5%" stopColor="#0D9488" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#0D9488" stopOpacity={0} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
@@ -79,11 +79,11 @@ export function UsageChart({ data }: UsageChartProps) {
             <Area
               type="monotone"
               dataKey="liters"
-              stroke="#3b82f6"
+              stroke="#0D9488"
               strokeWidth={2}
               fill="url(#usageGrad)"
               dot={false}
-              activeDot={{ r: 4, fill: '#3b82f6' }}
+              activeDot={{ r: 4, fill: '#0D9488' }}
             />
           </AreaChart>
         </ResponsiveContainer>

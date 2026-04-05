@@ -17,6 +17,7 @@ export default function LandingPage() {
         'Enter your CNIC and check eligibility in 30 seconds!',
         'Apna CNIC daal kar eligibility check karein. Sirf 30 seconds!'
       ),
+      delay: 'delay-100',
     },
     {
       icon: Sparkles,
@@ -25,6 +26,7 @@ export default function LandingPage() {
         'AI checks your income & vehicle type to predict eligibility.',
         'AI aapki income aur vehicle dekh kar bataega — eligible ho ya nahin.'
       ),
+      delay: 'delay-200',
     },
     {
       icon: QrCode,
@@ -33,32 +35,44 @@ export default function LandingPage() {
         'Use a QR code at the petrol station to claim your subsidy.',
         'QR code se petrol station par subsidy use karein. Bilkul simple!'
       ),
+      delay: 'delay-300',
     },
   ]
 
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-700 to-blue-900 text-white px-4 py-16 sm:py-24 text-center">
+      <section className="bg-gradient-to-br from-teal-800 to-teal-950 text-white px-4 py-16 sm:py-24 text-center overflow-hidden">
         <div className="max-w-2xl mx-auto space-y-6">
-          <div className="flex justify-center">
-            <Fuel className="h-14 w-14 text-blue-200" />
+          {/* Floating icon */}
+          <div className="flex justify-center anim-fade-in delay-0">
+            <Fuel className="h-14 w-14 text-teal-200 anim-float" />
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
+
+          <h1 className="text-3xl sm:text-4xl font-bold leading-tight anim-fade-up delay-100">
             {t('Pakistan Petrol Subsidy', 'پاکستان پیٹرول سبسڈی')}
             <br />
-            <span className="text-blue-200">{t('Demo App', 'ڈیمو ایپ')}</span>
+            <span className="text-teal-200">{t('Demo App', 'ڈیمو ایپ')}</span>
           </h1>
-          <p className="text-blue-100 text-base sm:text-lg max-w-md mx-auto">
+
+          <p className="text-teal-100 text-base sm:text-lg max-w-md mx-auto anim-fade-up delay-200">
             {t(
               'An AI-powered petrol subsidy system for low-income citizens. Check if you are eligible.',
               'Low-income citizens ke liye petrol subsidy ka AI-powered system. Check karein — kya aap eligible hain?'
             )}
           </p>
-          <Button asChild size="lg" className="bg-white text-blue-800 hover:bg-blue-50 font-bold text-base min-h-[52px] px-8">
-            <Link href="/eligibility">{t('Check Eligibility →', 'اہلیت چیک کریں ←')}</Link>
-          </Button>
-          <p className="text-xs text-blue-300 pt-2">
+
+          <div className="anim-fade-up delay-300">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-teal-800 hover:bg-teal-50 font-bold text-base min-h-[52px] px-8 hover:scale-105 transition-transform duration-200"
+            >
+              <Link href="/eligibility">{t('Check Eligibility →', 'اہلیت چیک کریں ←')}</Link>
+            </Button>
+          </div>
+
+          <p className="text-xs text-teal-300 pt-2 anim-fade-in delay-400">
             {t('Free • No registration • Instant result', 'مفت • بغیر رجسٹریشن • فوری نتیجہ')}
           </p>
         </div>
@@ -67,16 +81,16 @@ export default function LandingPage() {
       {/* Features */}
       <section className="px-4 py-12 bg-slate-50">
         <div className="max-w-2xl mx-auto space-y-4">
-          <h2 className="text-xl font-semibold text-center text-slate-800 mb-6">
+          <h2 className="text-xl font-semibold text-center text-slate-800 mb-6 anim-fade-up delay-0">
             {t('How does it work?', 'Kaise kaam karta hai?')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-3">
-            {features.map(({ icon: Icon, title, desc }) => (
-              <Card key={title} className="border-0 shadow-sm">
+            {features.map(({ icon: Icon, title, desc, delay }) => (
+              <Card key={title} className={`border-0 shadow-sm card-lift anim-fade-up ${delay}`}>
                 <CardContent className="p-5 space-y-3 text-center">
                   <div className="flex justify-center">
-                    <div className="p-2.5 bg-blue-100 rounded-full">
-                      <Icon className="h-6 w-6 text-blue-700" />
+                    <div className="p-2.5 bg-teal-100 rounded-full transition-transform duration-300 group-hover:scale-110">
+                      <Icon className="h-6 w-6 text-teal-700" />
                     </div>
                   </div>
                   <h3 className="font-semibold text-slate-800">{title}</h3>
@@ -90,7 +104,7 @@ export default function LandingPage() {
 
       {/* CTA bottom */}
       <section className="px-4 py-12 text-center bg-white border-t">
-        <div className="max-w-sm mx-auto space-y-4">
+        <div className="max-w-sm mx-auto space-y-4 anim-fade-up delay-100">
           <h2 className="text-lg font-semibold text-slate-800">
             {t('Check now', 'Abhi check karein')}
           </h2>
@@ -100,7 +114,11 @@ export default function LandingPage() {
               'Motorcycle ya rickshaw owners — 20 litre subsidy available hai har mahine.'
             )}
           </p>
-          <Button asChild size="lg" className="w-full min-h-[52px] text-base font-bold">
+          <Button
+            asChild
+            size="lg"
+            className="w-full min-h-[52px] text-base font-bold hover:scale-[1.02] transition-transform duration-200"
+          >
             <Link href="/eligibility">{t('Check Eligibility →', 'اہلیت چیک کریں ←')}</Link>
           </Button>
         </div>

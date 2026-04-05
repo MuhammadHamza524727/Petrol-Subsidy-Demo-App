@@ -97,24 +97,24 @@ export function ChatbotPanel() {
       <button
         onClick={() => setIsOpen((o) => !o)}
         aria-label={isOpen ? 'Close chat' : 'Open chat'}
-        className="fixed bottom-6 right-4 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg transition-all active:scale-95"
+        className={`fixed bottom-6 right-4 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-teal-600 hover:bg-teal-700 text-white shadow-lg transition-all hover:scale-110 active:scale-95 ${!isOpen ? 'anim-pulse-ring' : ''}`}
       >
         {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
       </button>
 
       {/* Chat panel */}
       {isOpen && (
-        <div className="fixed bottom-24 right-4 z-50 w-[calc(100vw-2rem)] max-w-sm flex flex-col bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden"
+        <div className="fixed bottom-24 right-4 z-50 w-[calc(100vw-2rem)] max-w-sm flex flex-col bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden anim-scale-in"
           style={{ height: '420px' }}
         >
           {/* Header */}
-          <div className="flex items-center gap-2 px-4 py-3 bg-blue-700 text-white shrink-0">
-            <Bot className="h-5 w-5 text-blue-200" />
+          <div className="flex items-center gap-2 px-4 py-3 bg-teal-700 text-white shrink-0">
+            <Bot className="h-5 w-5 text-teal-200" />
             <div className="flex-1 min-w-0">
               <p className="font-semibold text-sm">Subsidy Assistant</p>
-              <p className="text-xs text-blue-300">AI-powered · Demo only</p>
+              <p className="text-xs text-teal-300">AI-powered · Demo only</p>
             </div>
-            <button onClick={() => setIsOpen(false)} className="p-1 hover:bg-blue-600 rounded-md">
+            <button onClick={() => setIsOpen(false)} className="p-1 hover:bg-teal-600 rounded-md">
               <X className="h-4 w-4" />
             </button>
           </div>
@@ -127,13 +127,13 @@ export function ChatbotPanel() {
                 className={`flex gap-2 ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
               >
                 {/* Avatar */}
-                <div className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-white text-xs ${msg.role === 'user' ? 'bg-blue-500' : 'bg-slate-500'}`}>
+                <div className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-white text-xs ${msg.role === 'user' ? 'bg-teal-500' : 'bg-slate-500'}`}>
                   {msg.role === 'user' ? <User className="h-3.5 w-3.5" /> : <Bot className="h-3.5 w-3.5" />}
                 </div>
 
                 {/* Bubble */}
                 <div className={`max-w-[78%] space-y-1 ${msg.role === 'user' ? 'items-end' : 'items-start'} flex flex-col`}>
-                  <div className={`rounded-2xl px-3 py-2 text-sm leading-relaxed ${msg.role === 'user' ? 'bg-blue-600 text-white rounded-tr-sm' : 'bg-white border border-slate-200 text-slate-800 rounded-tl-sm'}`}>
+                  <div className={`rounded-2xl px-3 py-2 text-sm leading-relaxed ${msg.role === 'user' ? 'bg-teal-600 text-white rounded-tr-sm' : 'bg-white border border-slate-200 text-slate-800 rounded-tl-sm'}`}>
                     {msg.content}
                   </div>
 
@@ -141,7 +141,7 @@ export function ChatbotPanel() {
                   {msg.role === 'assistant' && ttsSupported && (
                     <button
                       onClick={() => speaking ? handleStopSpeak() : handleSpeak(msg.content)}
-                      className="flex items-center gap-1 text-xs text-slate-400 hover:text-blue-600 transition-colors px-1"
+                      className="flex items-center gap-1 text-xs text-slate-400 hover:text-teal-600 transition-colors px-1"
                     >
                       {speaking ? (
                         <><VolumeX className="h-3 w-3" /> Stop</>

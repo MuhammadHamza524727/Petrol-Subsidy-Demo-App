@@ -28,7 +28,7 @@ export default function EligibilityPage() {
   }
 
   return (
-    <div className="max-w-md mx-auto px-4 py-10 space-y-8">
+    <div className="max-w-md mx-auto px-4 py-10 space-y-8 anim-fade-up">
       {/* Back link */}
       <Link
         href="/"
@@ -41,7 +41,7 @@ export default function EligibilityPage() {
       {/* Header */}
       <div className="space-y-2">
         <div className="flex items-center gap-2">
-          <ShieldCheck className="h-6 w-6 text-blue-600" />
+          <ShieldCheck className="h-6 w-6 text-teal-600" />
           <h1 className="text-2xl font-bold text-slate-800">
             {t('Check Eligibility', 'اہلیت چیک کریں')}
           </h1>

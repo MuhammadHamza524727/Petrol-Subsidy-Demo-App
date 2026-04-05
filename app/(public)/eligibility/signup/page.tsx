@@ -60,7 +60,7 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="max-w-md mx-auto px-4 py-10 space-y-6">
+    <div className="max-w-md mx-auto px-4 py-10 space-y-6 anim-fade-up">
       {/* Eligible badge */}
       <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex items-start gap-3">
         <CheckCircle2 className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
@@ -74,7 +74,7 @@ export default function SignupPage() {
       {/* Profile form */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-5">
         <div className="flex items-center gap-2">
-          <UserPlus className="h-5 w-5 text-blue-600" />
+          <UserPlus className="h-5 w-5 text-teal-600" />
           <h1 className="text-xl font-bold text-slate-800">Apna Account Banayein</h1>
         </div>
         <p className="text-sm text-slate-500">

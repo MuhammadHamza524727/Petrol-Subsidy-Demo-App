@@ -78,7 +78,7 @@ export function QrVoucher({ cnic, qrValue, remainingQuota, onScanSuccess }: QrVo
       {/* QR display */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col items-center gap-4">
         <div className="flex items-center gap-2 self-start w-full">
-          <QrCode className="h-5 w-5 text-blue-600" />
+          <QrCode className="h-5 w-5 text-teal-600" />
           <h2 className="font-semibold text-slate-800">QR Voucher</h2>
           <Badge variant="secondary" className="ml-auto text-xs">Demo</Badge>
         </div>
@@ -98,7 +98,7 @@ export function QrVoucher({ cnic, qrValue, remainingQuota, onScanSuccess }: QrVo
             </div>
             <div className="text-center space-y-1">
               <p className="text-sm text-slate-500">Remaining quota</p>
-              <p className="text-3xl font-bold text-blue-700">{remainingQuota}L</p>
+              <p className="text-3xl font-bold text-teal-700">{remainingQuota}L</p>
               <p className="text-xs text-slate-400 font-mono">{cnic}</p>
             </div>
           </>
@@ -127,7 +127,7 @@ export function QrVoucher({ cnic, qrValue, remainingQuota, onScanSuccess }: QrVo
         <DialogContent className="max-w-sm mx-auto">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
-              <ScanLine className="h-5 w-5 text-blue-600" />
+              <ScanLine className="h-5 w-5 text-teal-600" />
               Simulate Petrol Scan
             </DialogTitle>
             <DialogDescription>

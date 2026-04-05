@@ -16,7 +16,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Top nav */}
       <header className="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/dashboard" className="flex items-center gap-2 font-bold text-blue-700">
+          <Link href="/dashboard" className="flex items-center gap-2 font-bold text-teal-700">
             <Fuel className="h-5 w-5" />
             <span className="text-sm sm:text-base">Petrol Subsidy</span>
           </Link>

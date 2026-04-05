@@ -37,7 +37,7 @@ export default function EligibilityResultPage() {
   if (!result) return null
 
   return (
-    <div className="max-w-md mx-auto px-4 py-10 space-y-6">
+    <div className="max-w-md mx-auto px-4 py-10 space-y-6 anim-fade-up">
       <Link
         href="/eligibility"
         className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
@@ -76,7 +76,7 @@ export default function EligibilityResultPage() {
         <Button asChild variant="outline" size="lg" className="w-full min-h-[52px]">
           <Link href="/eligibility">Check Another CNIC</Link>
         </Button>
-        <Button asChild variant="ghost" size="lg" className="w-full min-h-[52px] text-blue-600">
+        <Button asChild variant="ghost" size="lg" className="w-full min-h-[52px] text-teal-600">
           <Link href="/predict">Try AI Prediction →</Link>
         </Button>
       </div>
