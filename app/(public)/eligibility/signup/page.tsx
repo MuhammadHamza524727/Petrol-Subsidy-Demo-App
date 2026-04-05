@@ -54,7 +54,7 @@ export default function SignupPage() {
         sessionStorage.setItem('eligibility_vehicle', vehicle)
         router.push('/dashboard')
       } else {
-        setErrors({ form: 'Registration fail ho gayi — dobara koshish karein' })
+        setErrors({ form: `Registration fail ho gayi — ${res.detail ?? res.error ?? 'unknown error'}` })
       }
     })
   }

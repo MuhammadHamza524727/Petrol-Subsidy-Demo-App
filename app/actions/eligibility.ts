@@ -15,6 +15,7 @@ export interface EligibilityResponse {
 export interface RegisterResponse {
   success: boolean
   error?: string
+  detail?: string
 }
 
 /** Step 1: Check if CNIC is eligible (no DB write yet) */
@@ -69,7 +70,9 @@ export async function registerUser(input: {
       .onConflictDoNothing()
 
     return { success: true }
-  } catch {
-    return { success: false, error: 'DB_ERROR' }
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err)
+    console.error('[registerUser] DB error:', detail)
+    return { success: false, error: 'DB_ERROR', detail }
   }
 }
