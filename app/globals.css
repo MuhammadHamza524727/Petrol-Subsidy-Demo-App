@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+/* ============================================================
+   NEON DARK THEME  (data-theme="neon" on <html>)
+   From skills/ui-skills.md — Dark Neon Edition
+   Background: #050505 | Card: #0D1117 | Primary: #10B981
+   ============================================================ */
+[data-theme="neon"] {
+  color-scheme: dark;
+
+  /* Shadcn CSS variable overrides */
+  --background: 0 0% 2%;
+  --foreground: 0 0% 100%;
+  --card: 215 28% 7%;
+  --card-foreground: 0 0% 96%;
+  --popover: 215 28% 7%;
+  --popover-foreground: 0 0% 96%;
+  --primary: 161 84% 39%;         /* #10B981 emerald green */
+  --primary-foreground: 0 0% 4%;
+  --secondary: 215 25% 11%;
+  --secondary-foreground: 215 16% 65%;
+  --muted: 215 25% 11%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 158 64% 52%;          /* #34D399 soft mint */
+  --accent-foreground: 0 0% 4%;
+  --destructive: 0 63% 40%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 215 25% 14%;
+  --input: 215 28% 9%;
+  --ring: 161 84% 39%;
+}
+
+/* Body & base */
+[data-theme="neon"] body {
+  background-color: #050505;
+  color: #ffffff;
+}
+
+/* Hard-coded Tailwind color overrides */
+[data-theme="neon"] .bg-white {
+  background-color: #0D1117 !important;
+}
+[data-theme="neon"] .bg-slate-50 {
+  background-color: #050505 !important;
+}
+[data-theme="neon"] .bg-slate-100 {
+  background-color: #111827 !important;
+}
+[data-theme="neon"] .hover\:bg-slate-100:hover {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+}
+
+/* Borders */
+[data-theme="neon"] .border-slate-200 {
+  border-color: rgba(16, 185, 129, 0.15) !important;
+}
+[data-theme="neon"] .border-slate-100 {
+  border-color: rgba(16, 185, 129, 0.1) !important;
+}
+
+/* Text colors */
+[data-theme="neon"] .text-slate-800 {
+  color: #e2e8f0 !important;
+}
+[data-theme="neon"] .text-slate-700 {
+  color: #cbd5e1 !important;
+}
+[data-theme="neon"] .text-slate-600 {
+  color: #94a3b8 !important;
+}
+[data-theme="neon"] .text-slate-500 {
+  color: #64748b !important;
+}
+[data-theme="neon"] .text-slate-400 {
+  color: #475569 !important;
+}
+
+/* Blue → neon green remapping */
+[data-theme="neon"] .text-blue-700,
+[data-theme="neon"] .text-blue-800 {
+  color: #10B981 !important;
+}
+[data-theme="neon"] .text-blue-600 {
+  color: #34D399 !important;
+}
+[data-theme="neon"] .bg-blue-100 {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+}
+[data-theme="neon"] .text-blue-700 {
+  color: #10B981 !important;
+}
+
+/* Hero section */
+[data-theme="neon"] .from-blue-700 {
+  --tw-gradient-from: #050505 !important;
+}
+[data-theme="neon"] .to-blue-900 {
+  --tw-gradient-to: #0a1a14 !important;
+}
+[data-theme="neon"] section.bg-gradient-to-br {
+  background: linear-gradient(135deg, #050505 0%, #061a10 60%, #0D1117 100%) !important;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.25);
+}
+[data-theme="neon"] .text-blue-100,
+[data-theme="neon"] .text-blue-200 {
+  color: #6ee7b7 !important;
+}
+[data-theme="neon"] .text-blue-300 {
+  color: #4ade80 !important;
+}
+
+/* Navigation header */
+[data-theme="neon"] header {
+  background-color: rgba(13, 17, 23, 0.97) !important;
+  border-bottom-color: rgba(16, 185, 129, 0.2) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Disclaimer / amber elements → neon green tint */
+[data-theme="neon"] .bg-amber-50 {
+  background-color: rgba(16, 185, 129, 0.06) !important;
+}
+[data-theme="neon"] .border-amber-200 {
+  border-color: rgba(16, 185, 129, 0.2) !important;
+}
+[data-theme="neon"] .text-amber-800,
+[data-theme="neon"] .text-amber-700 {
+  color: #34D399 !important;
+}
+[data-theme="neon"] .text-amber-600,
+[data-theme="neon"] .text-amber-500 {
+  color: #10B981 !important;
+}
+[data-theme="neon"] .hover\:bg-amber-100:hover {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+
+/* Green elements (eligibility success) */
+[data-theme="neon"] .bg-green-50 {
+  background-color: rgba(16, 185, 129, 0.07) !important;
+}
+[data-theme="neon"] .border-green-200,
+[data-theme="neon"] .border-green-300 {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+[data-theme="neon"] .text-green-800 {
+  color: #a7f3d0 !important;
+}
+[data-theme="neon"] .text-green-700,
+[data-theme="neon"] .text-green-600 {
+  color: #34D399 !important;
+}
+
+/* Red / destructive elements */
+[data-theme="neon"] .bg-red-50 {
+  background-color: rgba(239, 68, 68, 0.07) !important;
+}
+[data-theme="neon"] .border-red-300 {
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Shadows → neon glow */
+[data-theme="neon"] .shadow-sm {
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.08), 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Neon glow on primary buttons */
+[data-theme="neon"] button.bg-primary,
+[data-theme="neon"] a.bg-primary,
+[data-theme="neon"] [data-primary="true"] {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Nav link text */
+[data-theme="neon"] .hover\:text-slate-900:hover {
+  color: #10B981 !important;
+}
+[data-theme="neon"] nav a {
+  color: #94a3b8 !important;
+}
+[data-theme="neon"] nav a:hover {
+  color: #10B981 !important;
+}
+
+/* Input fields */
+[data-theme="neon"] input,
+[data-theme="neon"] select,
+[data-theme="neon"] textarea {
+  background-color: #0a0f1a !important;
+  border-color: rgba(16, 185, 129, 0.2) !important;
+  color: #e2e8f0 !important;
+}
+[data-theme="neon"] input::placeholder,
+[data-theme="neon"] textarea::placeholder {
+  color: #475569 !important;
+}
+[data-theme="neon"] input:focus,
+[data-theme="neon"] select:focus,
+[data-theme="neon"] textarea:focus {
+  border-color: rgba(16, 185, 129, 0.5) !important;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Custom scrollbar */
+[data-theme="neon"] ::-webkit-scrollbar {
+  width: 6px;
+}
+[data-theme="neon"] ::-webkit-scrollbar-track {
+  background: #050505;
+}
+[data-theme="neon"] ::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 3px;
+}
+[data-theme="neon"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.5);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(DATABASE_URL=\"postgresql://neondb_owner:npg_5TMvjEmturl1@ep-bitter-darkness-an4rpkbx-pooler.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require\" npx tsx:*)"
+    ]
+  }
+}
