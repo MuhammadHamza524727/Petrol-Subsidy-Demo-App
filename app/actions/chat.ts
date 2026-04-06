@@ -75,7 +75,8 @@ export async function getChatbotResponse(
 
     return { response: text, fallback: false }
   } catch (err) {
-    console.error('[chatbot] Grok API error:', err)
-    return { response: FALLBACK_RESPONSE, fallback: true }
+    const errMsg = err instanceof Error ? err.message : String(err)
+    console.error('[chatbot] Grok API error:', errMsg)
+    return { response: `[DEBUG] ${errMsg}`, fallback: true }
   }
 }
