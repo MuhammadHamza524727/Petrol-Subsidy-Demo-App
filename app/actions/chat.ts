@@ -62,25 +62,9 @@ export async function getChatbotResponse(
     { role: 'user', content: message },
   ]
 
-  // Resolve model: use GROK_MODEL if set, otherwise pick first available
-  let model = GROK_MODEL
-  if (!model) {
-    try {
-      const list = await grok.models.list()
-      const first = list.data?.[0]?.id
-      if (!first) throw new Error('No models available')
-      model = first
-      console.log('[chatbot] Using model:', model)
-    } catch (err) {
-      const errMsg = err instanceof Error ? err.message : String(err)
-      console.error('[chatbot] Models list error:', errMsg)
-      return { response: `[DEBUG] models: ${errMsg}`, fallback: true }
-    }
-  }
-
   try {
     const completion = await grok.chat.completions.create({
-      model,
+      model: GROK_MODEL,
       messages,
       max_tokens: 180,
       temperature: 0.7,
@@ -92,7 +76,7 @@ export async function getChatbotResponse(
     return { response: text, fallback: false }
   } catch (err) {
     const errMsg = err instanceof Error ? err.message : String(err)
-    console.error('[chatbot] Grok API error:', errMsg)
-    return { response: `[DEBUG] model=${model} err=${errMsg}`, fallback: true }
+    console.error('[chatbot] Groq API error:', errMsg)
+    return { response: FALLBACK_RESPONSE, fallback: true }
   }
 }
