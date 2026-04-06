@@ -1,7 +1,7 @@
 import OpenAI from 'openai'
 
 export const grok = new OpenAI({
-  apiKey: process.env.GROQ_API_KEY,
+  apiKey: process.env.GROQ_API_KEY ?? 'not-set',
   baseURL: 'https://api.groq.com/openai/v1',
 })
 
