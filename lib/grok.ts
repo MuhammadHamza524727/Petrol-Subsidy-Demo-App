@@ -11,4 +11,4 @@ Keep every response under 80 words.
 Always end your response with exactly this disclaimer on a new line: "⚠️ Yeh ek demo app hai — real government service nahin."
 Never use technical jargon. Be friendly and supportive.`
 
-export const GROK_MODEL = 'grok-beta'
+export const GROK_MODEL = 'grok-3-mini'
