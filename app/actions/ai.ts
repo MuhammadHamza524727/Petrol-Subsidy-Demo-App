@@ -1,6 +1,6 @@
 'use server'
 
-import { grok, GROK_SYSTEM_PROMPT, GROK_MODEL } from '@/lib/grok'
+import { getGroqClient, GROK_SYSTEM_PROMPT, GROK_MODEL } from '@/lib/grok'
 import { z } from 'zod'
 
 const PredictionSchema = z.object({
@@ -49,7 +49,7 @@ The user is likely ${likelyEligible ? 'ELIGIBLE' : 'NOT ELIGIBLE'}.
 Explain in simple English + Roman Urdu why. Keep it friendly and under 80 words.`
 
   try {
-    const completion = await grok.chat.completions.create({
+    const completion = await getGroqClient().chat.completions.create({
       model: GROK_MODEL,
       messages: [
         { role: 'system', content: GROK_SYSTEM_PROMPT },

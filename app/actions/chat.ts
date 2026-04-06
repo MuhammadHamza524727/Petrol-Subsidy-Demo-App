@@ -1,6 +1,6 @@
 'use server'
 
-import { grok, GROK_SYSTEM_PROMPT, GROK_MODEL } from '@/lib/grok'
+import { getGroqClient, GROK_SYSTEM_PROMPT, GROK_MODEL } from '@/lib/grok'
 
 export interface ChatTurn {
   role: 'user' | 'assistant'
@@ -63,7 +63,7 @@ export async function getChatbotResponse(
   ]
 
   try {
-    const completion = await grok.chat.completions.create({
+    const completion = await getGroqClient().chat.completions.create({
       model: GROK_MODEL,
       messages,
       max_tokens: 180,

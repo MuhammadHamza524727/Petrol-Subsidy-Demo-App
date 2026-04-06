@@ -1,9 +1,11 @@
 import OpenAI from 'openai'
 
-export const grok = new OpenAI({
-  apiKey: process.env.GROQ_API_KEY ?? 'not-set',
-  baseURL: 'https://api.groq.com/openai/v1',
-})
+export function getGroqClient(): OpenAI {
+  return new OpenAI({
+    apiKey: process.env.GROQ_API_KEY ?? 'not-set',
+    baseURL: 'https://api.groq.com/openai/v1',
+  })
+}
 
 export const GROK_SYSTEM_PROMPT = `You are a helpful assistant for Pakistan's petrol subsidy demo app.
 Always respond in simple English mixed with Roman Urdu (e.g. "Aap eligible hain kyun ke aapki income kam hai").
